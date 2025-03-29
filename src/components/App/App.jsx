@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; // Додаємо useEffect
+import { useState, useEffect } from 'react';
 import { imageSearch } from '../ImagesApi/ImagesApi';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import { notify } from '../Toast/Toast';
