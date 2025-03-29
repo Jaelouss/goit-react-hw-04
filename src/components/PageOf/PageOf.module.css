@@ -1,0 +1,8 @@
+.page {
+  font-size: 1.3rem;
+  border-bottom: 1px solid black;
+
+  @media (width<768px) {
+    font-size: 1rem;
+  }
+}

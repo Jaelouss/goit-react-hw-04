@@ -1,0 +1,18 @@
+.panel {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #e4e1e14f;
+  top: 100%;
+  left: 50%;
+  translate: -50% -100%;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}

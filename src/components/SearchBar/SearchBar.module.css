@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 10px;
+}
+.input,
+.button {
+  border: 1px solid black;
+  outline: none;
+  background-color: #e4e1e14f;
+
+  padding: 0.4rem;
+}
+.input {
+  border-right: none;
+  border-radius: 7px 0 0 7px;
+}
+.button {
+  border-left: 5px solid rgba(0, 0, 0, 0.315);
+  border-radius: 0 7px 7px 0;
+}

@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 2.2rem;
+}
+.text {
+  font-size: 1.5rem;
+}
