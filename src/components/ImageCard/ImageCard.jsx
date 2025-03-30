@@ -12,15 +12,17 @@ const ImageCard = ({ image, openModal }) => {
   };
 
   return (
-    <div>
-      <img
-        className={s.img}
-        width='300'
-        onClick={() => openModal(info)}
-        src={image.urls.small}
-        alt={image.alt_description}
-      />
-    </div>
+    image?.urls?.small && (
+      <div>
+        <img
+          className={s.img}
+          width='300'
+          onClick={() => openModal(info)}
+          src={image.urls.small}
+          alt={image?.alt_description}
+        />
+      </div>
+    )
   );
 };
 

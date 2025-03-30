@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { imageSearch } from '../ImagesApi/ImagesApi';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import { notify } from '../Toast/Toast';
@@ -21,31 +21,11 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [imageInfo, setImageInfo] = useState('');
 
-  useEffect(() => {
-    if (showModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [showModal]);
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    const form = evt.target;
-    const userQuery = form.elements.userQuery.value;
-    if (userQuery.trim() === '' || userQuery.trim().length < 2) {
-      notify('error', 'The request should consist of at least 2 letters');
-      return;
-    }
+  const handleSubmit = (userQuery) => {
     setQuery(userQuery);
     setCurrentPage(1);
     setImagesData([]);
     handleSearch(userQuery, 1);
-    form.reset();
   };
 
   const handleSearch = async (topic, page) => {
@@ -89,11 +69,9 @@ const App = () => {
     setImageInfo(info);
   };
 
-  const closeModal = (evt) => {
-    if (evt.target === evt.currentTarget) {
-      setShowModal(false);
-      setImageInfo('');
-    }
+  const closeModal = () => {
+    setShowModal(false);
+    setImageInfo('');
   };
 
   return (
@@ -119,7 +97,11 @@ const App = () => {
           />
         </div>
       )}
-      {showModal && <ImageModal image={imageInfo} closeModal={closeModal} />}
+      <ImageModal
+        image={imageInfo}
+        isOpen={showModal}
+        closeModal={closeModal}
+      />
     </>
   );
 };
